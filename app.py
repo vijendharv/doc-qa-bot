@@ -75,6 +75,7 @@ class DocumentQABot:
         # Initialize OpenAI embeddings model
         # This converts text into numerical vectors that can be compared for similarity
         self.embeddings = OpenAIEmbeddings(
+            model="text-embedding-3-small",
             openai_api_key=api_key  # Explicitly pass the API key
         )
         
@@ -153,6 +154,10 @@ class DocumentQABot:
             if not self.embeddings:
                 st.error("OpenAI components not initialized. Please enter your API key first.")
                 return
+            
+            print(len(chunks))
+            for chunk in chunks:
+                print(chunk)
                 
             if chunks:
                 # Create FAISS vectorstore from document chunks
