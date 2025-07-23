@@ -155,9 +155,9 @@ class DocumentQABot:
                 st.error("OpenAI components not initialized. Please enter your API key first.")
                 return
             
-            print(len(chunks))
-            for chunk in chunks:
-                print(chunk)
+            # print(len(chunks))
+            # for chunk in chunks:
+            #     print(chunk)
                 
             if chunks:
                 # Create FAISS vectorstore from document chunks
